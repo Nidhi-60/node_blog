@@ -1,0 +1,33 @@
+<%- include('../includes/header') %>
+
+<div class="container">
+  <form
+    action="/blog/write/"
+    method="post"
+    class="form-box"
+    enctype="multipart/form-data"
+    onsubmit="return checkBlog()"
+  >
+    <div>
+      <h3>Blogs</h3>
+      <hr />
+    </div>
+    <div id="errorBlog"></div>
+    <div class="form-group">
+      <label for="title">Title</label
+      ><input type="text" name="title" id="titleBlog" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea class="form-control" name="desc" id="descBlog"></textarea>
+    </div>
+    <div class="form-group">
+      <label>Image</label>
+      <input type="file" name="img" class="form-control" id="imgBlog" />
+    </div>
+    <div>
+      <input type="submit" value="Write" class="btn btn-outline-secondary" />
+    </div>
+  </form>
+</div>
+<%- include('../includes/footer') %>

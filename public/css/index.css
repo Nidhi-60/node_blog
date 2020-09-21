@@ -1,0 +1,31 @@
+.footer {
+  position: fixed;
+  width: 100%;
+  height: auto;
+  left: 0;
+  bottom: 0;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.form-box {
+  border: 1px solid grey;
+  margin-top: 30px;
+  padding: 20px;
+  margin-left: 30%;
+  width: 40%;
+  border-radius: 5px;
+}
+
+.blog-box {
+  border: 1px solid grey;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.img-box {
+  border: 1px solid grey;
+  padding: 10px;
+}

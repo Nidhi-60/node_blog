@@ -1,0 +1,34 @@
+<%- include("./includes/header") %>
+
+<div class="container">
+  <% if(successMessage) { %>
+
+  <div class="alert alert-info mt-4" id="successMessage">
+    <%= successMessage %>
+  </div>
+
+  <%} %> <% if(blog.length > 0) { %> <% for(let b of blog) { %>
+  <div class="row mb-3 blog-box">
+    <div class="col-md-3">
+      <img
+        src="/image/<%= b.image %>"
+        class="img-box"
+        height="200px"
+        width="200px"
+      />
+    </div>
+    <div class="col-md-4">
+      <h4><%= b.title %></h4>
+      <small>writer : <%= b.user.username %></small> &nbsp;
+      <small>Date: <%= b.date %></small><br />
+      <a href="/blog/read/<%= b._id %>/">Read More..</a>
+    </div>
+  </div>
+  <%} %> <%} else {%>
+
+  <h4>No Blog Yet..</h4>
+
+  <%} %>
+</div>
+
+<%- include("./includes/footer") %>

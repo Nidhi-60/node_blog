@@ -1,0 +1,43 @@
+<%- include('../includes/header') %>
+
+<div class="container">
+  <form
+    action="/auth/login/"
+    method="post"
+    class="form-box"
+    onsubmit="return checkLogin()"
+  >
+    <div>
+      <h3>Login</h3>
+      <hr />
+    </div>
+
+    <% if(error) { %>
+
+    <div class="alert alert-danger" id="errorMessage"><%= error %></div>
+
+    <%} %>
+
+    <div id="error"></div>
+
+    <div class="form-group">
+      <label for="username">UserName</label
+      ><input type="text" name="username" id="username" class="form-control" />
+      <!-- <div class="alert alert-danger" id="usernameError"></div> -->
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label
+      ><input
+        type="password"
+        name="password"
+        id="password"
+        class="form-control"
+      />
+      <!-- <div class="alert alert-danger" id="passwordError"></div> -->
+    </div>
+    <div>
+      <input type="submit" value="Login" class="btn btn-outline-secondary" />
+    </div>
+  </form>
+</div>
+<%- include('../includes/footer') %>

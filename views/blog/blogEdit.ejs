@@ -1,0 +1,42 @@
+<%- include('../includes/header') %>
+
+<div class="container">
+  <form
+    action="/blog/update/"
+    method="post"
+    class="form-box"
+    enctype="multipart/form-data"
+  >
+    <div>
+      <h3>Update Blogs</h3>
+      <hr />
+    </div>
+    <div id="error"></div>
+    <div class="form-group">
+      <label for="title">Title</label
+      ><input
+        type="text"
+        name="title"
+        id="title"
+        class="form-control"
+        value="<%= blog.title %>"
+      />
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <textarea class="form-control" name="desc" id="desc">
+<%= blog.desc %></textarea
+      >
+    </div>
+    <div class="form-group">
+      <label>Image</label>
+      <input type="file" name="img" class="form-control" id="img" />
+    </div>
+    <div>
+      <input type="submit" value="Update" class="btn btn-outline-secondary" />
+    </div>
+    <input type="hidden" name="blogId" value="<%= blog._id %>" />
+    <input type="hidden" name="prevImage" value="<%= blog.image %>" />
+  </form>
+</div>
+<%- include('../includes/footer') %>

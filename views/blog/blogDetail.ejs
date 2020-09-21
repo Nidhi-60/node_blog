@@ -1,0 +1,32 @@
+<%- include("../includes/header") %>
+
+<div class="container">
+  <div class="blog-box">
+    <h3 align="center"><%= blog.title %></h3>
+    <img
+      src="/image/<%= blog.image %>"
+      class="img-box"
+      height="300px"
+      width="300px"
+      style="margin-left: 35%"
+    />
+    <br />
+    <small>writer: <%= blog.user.username %></small> &nbsp;
+    <small>Date: <%= blog.date %></small>
+    <div class="mt-4">
+      <p><%= blog.desc %></p>
+    </div>
+    <% if(isAuthenticated) { %> <% if(user._id == blog.user._id) { %>
+    <div>
+      <a href="/blog/edit/<%= blog._id %>/" class="btn btn-outline-info"
+        >Edit</a
+      >
+      <a href="/blog/delete/<%= blog._id %>/" class="btn btn-outline-danger"
+        >Delete</a
+      >
+    </div>
+    <% } %> <%} %>
+  </div>
+</div>
+
+<%- include("../includes/footer") %>
